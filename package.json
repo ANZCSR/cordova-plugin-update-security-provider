@@ -1,0 +1,35 @@
+{
+    "name": "cordova-plugin-update-security-provider",
+    "version": "1.0.0",
+    "description": "An Android Cordova plugin that installs security updates for SSL through Google Play services.",
+    "types": "./types/index.d.ts",
+    "cordova": {
+      "id": "cordova-plugin-update-security-provider",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/newlionlabs/cordova-plugin-update-security-provider"
+    },
+    "keywords": [
+      "Cordova",
+      "Android",
+      "Security",
+      "SSL",
+      "ProviderInstaller",
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "engines": {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    },
+    "author": "Jon Czeck <jon.czeck@newlionlabs.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/newlionlabs/cordova-plugin-update-security-provider/issues"
+    },
+    "homepage": "https://github.com/newlionlabs/cordova-plugin-update-security-provider/"
+  }
