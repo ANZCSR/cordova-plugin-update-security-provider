@@ -1,18 +1,17 @@
 // Empty constructor
-var UpdateSecurityProviderLoader = function(require, exports, module) {
-    var exec = require('cordova/exec');
+function UpdateSecurityProviderPlugin() {}
 
-    function UpdateSecurityProvider() {}
+// The function that passes work along to native shells
+UpdateSecurityProviderPlugin.prototype.update = function(successCallback, errorCallback) {
+  cordova.exec(successCallback, errorCallback, 'UpdateSecurityProviderPlugin', 'update', null);
+}
 
-    // The function that passes work along to native shells
-    UpdateSecurityProvider.prototype.update = function(successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, 'UpdateSecurityProviderPlugin', 'update', null);
-    };
-
-    var updateSecurityProvider = new UpdateSecurityProvider();
-    module.exports = updateSecurityProvider;
+// Installation constructor that binds UpdateSecurityProviderPlugin to window
+UpdateSecurityProviderPlugin.install = function() {
+  if (!window.plugins) {
+    window.plugins = {};
+  }
+  window.plugins.updateSecurityProviderPlugin = new UpdateSecurityProviderPlugin();
+  return window.plugins.updateSecurityProviderPlugin;
 };
-
-UpdateSecurityProviderLoader(require, exports, module);
-
-cordova.define("cordova/plugin/UpdateSecurityProvider", UpdateSecurityProviderLoader);
+cordova.addConstructor(UpdateSecurityProviderPlugin.install);

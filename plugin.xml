@@ -2,29 +2,29 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-update-security-provider" version="1.0.0">
-    <name>UpdateSecurityProvider</name>
+    <name>UpdateSecurityProviderPlugin</name>
 
     <description>An Android Cordova plugin that installs security updates for SSL through Google Play services. Requires something like cordova-plugin-enable-multidex installed.</description>
     <license>MIT</license>
 
-    <keywords>cordova,plugin,android,security,ssl</keywords>
+    <keywords>cordova,android,security,ssl</keywords>
     <repo>https://github.com/newlionlabs/cordova-plugin-update-security-provider.git</repo>
     <issue>https://github.com/newlionlabs/cordova-plugin-update-security-provider/issues</issue>
   
     <engines>
-        <engine name="cordova" version=">=3.6.0"/>
+        <engine name="cordova" version=">=3.0.0"/>
     </engines>
   
-    <js-module src="www/updateSecurityProviderPlugin.js" name="UpdateSecurityProvider">
-        <clobbers target="cordova.plugins.updateSecurityProvider" />
+    <js-module src="www/updateSecurityProviderPlugin.js" name="updateSecurityProviderPlugin">
+        <clobbers target="window.plugins.updateSecurityProviderPlugin" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="UpdateSecurityProvider">
-                <param name="android-package" value="com.newlionlabs.cordova.plugin.UpdateSecurityProvider"/>
+            <feature name="UpdateSecurityProviderPlugin">
+                <param name="android-package" value="com.newlionlabs.cordova.plugin.UpdateSecurityProviderPlugin"/>
             </feature>
         </config-file>
         <framework src="com.google.android.gms:play-services:9.4.0" />
-        <source-file src="src/android/UpdateSecurityProvider.java" target-dir="src/com/newlionlabs/cordova/plugin" />
+        <source-file src="src/android/UpdateSecurityProviderPlugin.java" target-dir="src/com/newlionlabs/cordova/plugin" />
     </platform>
 </plugin>

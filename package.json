@@ -2,7 +2,6 @@
     "name": "cordova-plugin-update-security-provider",
     "version": "1.0.0",
     "description": "An Android Cordova plugin that installs security updates for SSL through Google Play services.",
-    "types": "./types/index.d.ts",
     "cordova": {
       "id": "cordova-plugin-update-security-provider",
       "platforms": [
